@@ -68,9 +68,7 @@ streamlit run app.py
 
 ## Configuration & Environment
 
-The system requires the following environment variables:
-- `ANTHROPIC_API_KEY`: Required for intent classification and response generation.
-- `OPENAI_API_KEY`: (Optional) Alternative LLM provider.
+The system is designed to run locally using **Ollama**. Ensure the Ollama server is running and the required model (`qwen2.5:7b-instruct`) is pulled.
 
 Operational parameters, such as the intent taxonomy and brand selection, are managed in `config/config.yaml`.
 

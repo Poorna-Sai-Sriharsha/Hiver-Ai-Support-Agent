@@ -3,10 +3,9 @@
 This document outlines the security measures and safety guardrails implemented in the Hiver AI Support Agent prototype.
 
 ## 1. Secret Management
-The system is designed to ensure that no sensitive credentials are committed to version control.
--   **Environment Variables**: All API keys (e.g., `ANTHROPIC_API_KEY`, `OPENAI_API_KEY`) must be stored in a `.env` file or system environment variables.
--   **Local Config**: `config/config.yaml` contains non-sensitive operational parameters (taxonomy, thresholds).
--   **Git Hygiene**: A strict `.gitignore` is in place to block `.env` and other secret-bearing files.
+The system is designed to run locally via Ollama, eliminating the need for external API keys.
+-   **Local Configuration**: `config/config.yaml` contains non-sensitive operational parameters (taxonomy, thresholds).
+-   **Git Hygiene**: A strict `.gitignore` is in place to block `.env` and other environment-specific files.
 
 ## 2. PII Handling and Data Safety
 To prevent the leakage of Personally Identifiable Information (PII), the system implements several layers of protection:
@@ -20,9 +19,9 @@ The system manages the risk of prompt injection (adversarial inputs designed to 
 -   **Output Validation**: Using Pydantic to enforce strict JSON schemas for all LLM outputs, preventing the system from executing malformed or unexpected instructions.
 
 ## 4. LLM Failure and Reliability
-To ensure system stability during API failures:
--   **Bounded Retries**: The `LLMClient` implements exponential backoff for 429 (Rate Limit) and 500 (Server Error) responses.
--   **Safe Fallbacks**: If the LLM fails to return a valid response, the system falls back to a safe, generic response: *"I'm sorry, I'm having trouble processing your request. Please hold on while I connect you to a specialist."*
+To ensure system stability during local server issues:
+-   **Bounded Retries**: The `LLMClient` implements exponential backoff for request failures.
+-   **Safe Fallbacks**: If the local LLM fails to return a valid response, the system falls back to a safe, generic response: *"I'm sorry, I'm having trouble processing your request. Please hold on while I connect you to a specialist."*
 -   **Fallback Retrieval**: If the embedding model fails, the system reverts to a deterministic keyword-overlap search.
 
 ## 5. Generated Response Safety
