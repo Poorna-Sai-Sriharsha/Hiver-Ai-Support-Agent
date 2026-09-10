@@ -1,0 +1,36 @@
+# Byte-compiled / optimized / cached files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# IDEs
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Environment and Secrets
+.env
+.env.local
+.env.*.local
+
+# Dataset and Artifacts
+data/twcs.csv
+data/processed/
+artifacts/*.json
+artifacts/*.csv
+evaluation/human_scores.csv
+evaluation/annotation_queue.csv
+
+# Project specific
+brand_candidates.csv
+data_profile.json

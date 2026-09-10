@@ -1,0 +1,72 @@
+[
+  {
+    "query": "My iPhone 13 battery is draining way too fast, it only lasts 4 hours.",
+    "ground_truth": {
+      "intent": "Hardware Failure",
+      "escalation": "AUTO_HANDLED"
+    }
+  },
+  {
+    "query": "I've been locked out of my iCloud account and the password reset isn't working.",
+    "ground_truth": {
+      "intent": "Account Access",
+      "escalation": "ESCALATED"
+    }
+  },
+  {
+    "query": "Where is my order #98765? It was supposed to be here yesterday!",
+    "ground_truth": {
+      "intent": "Order & Logistics",
+      "escalation": "AUTO_HANDLED"
+    }
+  },
+  {
+    "query": "The latest iOS update completely broke my mail app. I can't send any emails!",
+    "ground_truth": {
+      "intent": "Software/OS Bugs",
+      "escalation": "AUTO_HANDLED"
+    }
+  },
+  {
+    "query": "My MacBook Pro screen has a weird green line. Is this covered by warranty?",
+    "ground_truth": {
+      "intent": "Warranty & Repairs",
+      "escalation": "AUTO_HANDLED"
+    }
+  },
+  {
+    "query": "I was charged twice for my iCloud storage this month. I want my money back now!",
+    "ground_truth": {
+      "intent": "Billing & Subscriptions",
+      "escalation": "ESCALATED"
+    }
+  },
+  {
+    "query": "How do I back up my iPhone to a computer?",
+    "ground_truth": {
+      "intent": "General Inquiry",
+      "escalation": "AUTO_HANDLED"
+    }
+  },
+  {
+    "query": "My phone is completely dead and won't even charge. I'm losing business because of this!",
+    "ground_truth": {
+      "intent": "Hardware Failure",
+      "escalation": "ESCALATED"
+    }
+  },
+  {
+    "query": "I want to cancel my Apple Music subscription immediately.",
+    "ground_truth": {
+      "intent": "Billing & Subscriptions",
+      "escalation": "AUTO_HANDLED"
+    }
+  },
+  {
+    "query": "Can you help me transfer my data from Android to iPhone?",
+    "ground_truth": {
+      "intent": "General Inquiry",
+      "escalation": "AUTO_HANDLED"
+    }
+  }
+]

@@ -1,0 +1,50 @@
+brand:
+  name: AmazonHelp
+  stats:
+    brand: AmazonHelp
+    customer_diversity: 71049
+    pair_count: 154985
+    response_count: 169840
+intents:
+- Hardware Failure
+- Account Access
+- Order & Logistics
+- Software/OS Bugs
+- Warranty & Repairs
+- Billing & Subscriptions
+- General Inquiry
+model: claude-3-5-sonnet-20240620
+prompts:
+  escalation_reasoning: "Analyze the following customer interaction for {brand}:\n\
+    Customer Message: \"{text}\"\nDrafted AI Response: \"{reply}\"\n\nDecide if this\
+    \ should be:\n1. AUTO_HANDLED: The query is straightforward, the AI response is\
+    \ accurate and helpful, and the sentiment is neutral or positive.\n2. ESCALATED:\
+    \ The user is extremely angry, the query involves security/legal issues, or the\
+    \ AI response is uncertain.\n\nReturn your response in JSON format:\n{{\n  \"\
+    decision\": \"AUTO_HANDLED\" | \"ESCALATED\",\n  \"reason\": \"Brief explanation\
+    \ of why\"\n}}\n"
+  intent_classification: 'You are an expert customer support classifier for {brand}.
+
+    Classify the following customer message into one of these intents: {intents}.
+
+
+    Message: "{text}"
+
+
+    Return only the intent name.
+
+    '
+  reply_generation: 'You are a senior support engineer at {brand}.
+
+    Using the following historical resolutions as context:
+
+    {context}
+
+
+    Draft a polite, concise, and helpful reply to the customer''s message: "{text}"
+
+
+    Ensure the reply is grounded in the provided context and maintains the {brand}
+    brand voice.
+
+    '

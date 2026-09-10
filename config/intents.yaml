@@ -1,0 +1,64 @@
+intents:
+  - name: "Delivery & Shipping"
+    description: "Inquiries or complaints regarding the transport and delivery of an order."
+    inclusion_criteria: "Mentions of shipping speed, delivery dates, 'two-day shipping', courier issues, or delayed arrival."
+    exclusion_criteria: "General product quality issues or refund requests."
+    positive_examples:
+      - "if something is \"free two day shipping\" with prime, why is it taking four days?"
+    confusable_with: ["Order Status & Tracking"]
+
+  - name: "Refunds & Returns"
+    description: "Requests for money back or questions about returning a product."
+    inclusion_criteria: "Explicit requests for 'refund', 'money back', 'return a product', or issues with the return process."
+    exclusion_criteria: "Simple delivery delays without a request for a refund."
+    positive_examples:
+      - "Need to get a refund of this product that I returned."
+    confusable_with: ["Payment & Billing"]
+
+  - name: "Account & Security"
+    description: "Issues accessing the account or security-related concerns."
+    inclusion_criteria: "Mentions of 'login', 'password', 'account locked', 'account reinstatement', or 'security'."
+    exclusion_criteria: "General questions about how to use the website."
+    positive_examples:
+      - "Please help in reinstate my account"
+    confusable_with: ["Customer Service Access"]
+
+  - name: "Order Status & Tracking"
+    description: "Requests for information on where an order is currently located."
+    inclusion_criteria: "Questions about 'where is my order', 'tracking number', 'order status', or 'did it ship'."
+    exclusion_criteria: "Complaints about the delivery being late (that goes to Delivery & Shipping)."
+    positive_examples:
+      - "Where is my order #12345?"
+    confusable_with: ["Delivery & Shipping"]
+
+  - name: "Payment & Billing"
+    description: "Issues related to charges, payments, and subscriptions."
+    inclusion_criteria: "Mentions of 'charge', 'billing error', 'Prime subscription', 'credit card', or 'invoice'."
+    exclusion_criteria: "Refund requests (that goes to Refunds & Returns)."
+    positive_examples:
+      - "Signed up for a free Amazon Prime trial and now they're trying to charge my card the £79 anyway?"
+    confusable_with: ["Refunds & Returns"]
+
+  - name: "Product Quality & Warranty"
+    description: "Complaints about the physical state or functionality of a received product."
+    inclusion_criteria: "Mentions of 'damaged', 'broken', 'warranty', 'defective', or 'not as described'."
+    exclusion_criteria: "Delivery damage (that goes to Delivery & Shipping)."
+    positive_examples:
+      - "Bonjour, L'article est totalement endommagé"
+    confusable_with: ["Delivery & Shipping"]
+
+  - name: "Customer Service Access"
+    description: "Difficulty in contacting Amazon support or complaints about the support experience."
+    inclusion_criteria: "Questions about 'how to contact', 'customer care', 'dropped calls', or 'reach you fast'."
+    exclusion_criteria: "Specific issues with an order (those should be categorized by the issue type)."
+    positive_examples:
+      - "trying to call the customer support without any luck. What's the best way to reach you fast?"
+    confusable_with: ["Account & Security"]
+
+  - name: "Severe Complaint / Fraud"
+    description: "High-severity interactions involving accusations of fraud, legal threats, or extreme anger."
+    inclusion_criteria: "Use of words like 'fraud', 'cheat', 'court', 'liars', or extremely aggressive tone."
+    exclusion_criteria: "Standard complaints about late delivery."
+    positive_examples:
+      - "#fraudamazon #cheat #dontbuy Order id:406-1634211-8172338"
+    confusable_with: ["Refunds & Returns"]
